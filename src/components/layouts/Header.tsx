@@ -42,10 +42,16 @@ const Wrapper = styled.header`
   }
 
   @media ${devices.sm} {
+    box-sizing: border-box;
     position: fixed;
-    width: 100%;
+    width: 90%;
     z-index: 10;
-    padding: ${spacing[300]} 0;
+    padding: ${spacing[200]} 0;
+
+    img,
+    button {
+      max-width: 100px;
+    }
 
     & > button {
       visibility: visible;

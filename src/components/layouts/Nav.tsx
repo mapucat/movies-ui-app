@@ -30,17 +30,17 @@ const Wrapper = styled.nav`
     top: 64px;
     right: 0;
     height: 90vh;
-    background-color: ${colors.background_base};
+    background-color: ${colors.background_base_transparent};
     overflow-y: auto;
     overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
     transition: 0.45s;
-    padding: ${spacing[300]} 0;
+    padding: ${spacing[600]} 0;
   }
 
   &.navigation--opened {
     @media ${devices.sm} {
-      width: 250px;
+      width: 100vw;
     }
   }
 
@@ -61,9 +61,10 @@ const List = styled.ul`
 
   @media ${devices.sm} {
     flex-direction: column;
+    gap: ${spacing[800]};
     width: 100%;
     height: 100%;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
   }
 `;

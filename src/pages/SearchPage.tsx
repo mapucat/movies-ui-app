@@ -6,6 +6,7 @@ import SearchResult from "../components/search/SuccessResult";
 import Loader from "../components/ui/Loader";
 import useSearchMovies from "../hooks/searchMovies";
 import { spacing } from "../styles/settings/Spacing";
+import { devices } from "../styles/settings/Breakpoints";
 
 const Wrapper = styled.div`
   display: flex;
@@ -16,6 +17,10 @@ export const ResultWrapper = styled(Wrapper)`
   align-items: center;
   text-align: center;
   padding: ${spacing[400]} 0;
+
+  @media ${devices.sm} {
+    padding-top: 0;
+  }
 `;
 
 const SearchInvite = () => {

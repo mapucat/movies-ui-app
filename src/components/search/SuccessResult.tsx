@@ -7,7 +7,7 @@ import Icon from "../ui/Icon";
 
 type SearchResultProps = {
   title: string;
-  movies: Movie[];
+  movies: Movie[] | null;
   notFound: {
     useIcon: boolean;
     title: string;
@@ -34,7 +34,7 @@ const ResultSection = styled.section`
   }
 `;
 
-const SearchResult = ({ title, movies, notFound }: SearchResultProps) => {
+const SearchResult = ({ title, movies = [], notFound }: SearchResultProps) => {
   if (!movies?.length) {
     return (
       <NotFoundMessage>

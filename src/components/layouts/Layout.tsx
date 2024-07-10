@@ -11,7 +11,9 @@ type LayoutProps = {
 };
 
 const Wrapper = styled.div`
+  box-sizing: border-box;
   background-color: ${colors.background_base};
+  width: 100vw;
   min-height: 100vh;
   padding: 0 ${spacing[800]};
 

@@ -1,22 +1,32 @@
 import { useMemo } from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { useSavedMovies } from "../../context/SavedMoviesContext";
 import { isMovieSaved } from "../../helpers/Movies";
 import { spacing } from "../../styles/settings/Spacing";
 import Button from "../ui/Button";
 import Icon from "../ui/Icon";
+import { devices } from "../../styles/settings/Breakpoints";
 
 type MovieProps = {
   movie: Movie;
 };
 
-const Wrapper = styled.article`
+const baseElementStyles = css`
   border-radius: 8px;
-
-  position: relative;
-
+  
   width: 180px;
   height: 270px;
+`;
+
+const Wrapper = styled.article`
+  ${baseElementStyles}
+
+  & > img, & > div {
+    ${baseElementStyles}
+    position: absolute;
+  }
+
+  position: relative;
 
   div.movie__detailed-info {
     display: none;
@@ -36,23 +46,15 @@ const Wrapper = styled.article`
 `;
 
 const Poster = styled.img`
-  border-radius: 8px;
-  width: 180px;
-  height: 270px;
-
-  position: absolute;
   z-index: 0;
   top: 0;
   left: 0;
 `;
 
 const BasicInfo = styled.div`
-  position: absolute;
   z-index: 5;
   bottom: 0;
   left: 0;
-
-  width: 100%;
 
   background: rgb(0, 0, 0);
   background: linear-gradient(
@@ -71,14 +73,11 @@ const BasicInfo = styled.div`
 `;
 
 const DetailedInfo = styled.div`
-  position: absolute;
   z-index: 10;
   top: 0;
   left: 0;
   padding: ${spacing[300]};
   box-sizing: border-box;
-  width: 180px;
-  height: 270px;
 
   background: rgb(0, 0, 0);
   background: linear-gradient(
@@ -93,6 +92,14 @@ const DetailedInfo = styled.div`
     -webkit-line-clamp: 8;
     overflow: hidden;
     text-overflow: ellipsis;
+  }
+
+  @media ${devices.sm} {
+    padding: ${spacing[100]};
+
+    span {
+    -webkit-line-clamp: 6;
+    }
   }
 `;
 
@@ -137,7 +144,7 @@ const Movie = ({ movie }: MovieProps) => {
         <span>{movie.first_air_date}</span>
       </BasicInfo>
 
-      <Poster src={`${imageUrl}/w300${movie.poster_path}`} />
+      <Poster src={`${imageUrl}/w185${movie.poster_path}`} />
     </Wrapper>
   );
 };

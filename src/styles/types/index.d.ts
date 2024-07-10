@@ -24,6 +24,7 @@ export type Colors = {
   black: string;
   // by component
   background_base: string;
+  background_base_transparent: string;
   primary_text: string;
   secondary_text: string;
 
