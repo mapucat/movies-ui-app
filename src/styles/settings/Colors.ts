@@ -21,21 +21,21 @@ const ALIASES = {
   // by color name
   green: GREEN_PALLETE[500],
   grey: GREY_PALLETE[500],
-  white: GREY_PALLETE[50],
-  black: GREY_PALLETE[800],
+  white: GREY_PALLETE[50] as string,
+  black: GREY_PALLETE[800] as string,
   // by component
-  background_base: GREY_PALLETE[800],
+  background_base: GREY_PALLETE[800] as string,
   primary_text: GREY_PALLETE[500],
-  secondary_text: GREY_PALLETE[50],
+  secondary_text: GREY_PALLETE[50] as string,
 
   primary: GREEN_PALLETE[500],
-  secondary: GREY_PALLETE[50],
+  secondary: GREY_PALLETE[50] as string,
 };
 
 export const colors: Colors = {
-  ...ALIASES,
   palettes: {
     grey: GREY_PALLETE,
     green: GREEN_PALLETE,
   },
+  ...ALIASES,
 };

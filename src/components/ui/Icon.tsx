@@ -1,11 +1,9 @@
-import React from "react";
-
-import Menu from "./../../assets/menu.svg";
-import NoData from "./../../assets/no_data.svg";
-import SaveFilled from "./../../assets/save-filled.svg";
-import Save from "./../../assets/save.svg";
-import Search from "./../../assets/search.svg";
-import Clear from "./../../assets/x.svg";
+import Menu from "./../../assets/menu.svg?react";
+import NoData from "./../../assets/no_data.svg?react";
+import SaveFilled from "./../../assets/save-filled.svg?react";
+import Save from "./../../assets/save.svg?react";
+import Search from "./../../assets/search.svg?react";
+import Clear from "./../../assets/x.svg?react";
 
 type IconProps = {
   name: "search" | "noData" | "clear" | "save" | "saveFilled" | "menu";
@@ -15,15 +13,15 @@ const Icon = (props: IconProps) => {
   const { name } = props;
 
   const Icons: Record<IconProps["name"], any> = {
-    search: Search,
-    noData: NoData,
-    clear: Clear,
-    save: Save,
-    saveFilled: SaveFilled,
-    menu: Menu,
+    search: <Search />,
+    noData: <NoData />,
+    clear: <Clear />,
+    save: <Save />,
+    saveFilled: <SaveFilled />,
+    menu: <Menu />,
   };
 
-  return <img src={Icons[name]} alt="Your SVG" />;
+  return Icons[name];
 };
 
 export default Icon;

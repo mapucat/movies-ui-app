@@ -87,8 +87,8 @@ const SearchInput = ({ onSearch }: SearchInputProps) => {
   const [value, setValue] = useState("");
   const [debouncedSearch] = useDebounce(value, 250);
 
-  const handleChange = (event: any) => {
-    const targetValue = (event.target as HTMLInputElement)?.value;
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const targetValue = (event?.target as HTMLInputElement)?.value;
     setValue(targetValue);
   };
 

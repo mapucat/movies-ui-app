@@ -16,13 +16,24 @@ export interface SettingsScale {
   1000?: string;
 }
 
-interface Colors {
+export type Colors = {
+  // by color name
+  green: string;
+  grey: string;
+  white: string;
+  black: string;
+  // by component
+  background_base: string;
+  primary_text: string;
+  secondary_text: string;
+
+  primary: string;
+  secondary: string;
   palettes: {
     grey: SettingsScale;
     green: SettingsScale;
   };
-  [x: string]: string | any;
-}
+};
 
 interface Font {
   primary: string;

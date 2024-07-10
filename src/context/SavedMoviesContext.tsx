@@ -13,7 +13,7 @@ type MovieObj = { index: number; movie: Movie };
 export interface SavedMoviesState {
   movies: Movie[];
   moviesObj: Record<number, MovieObj>;
-  setMovies: any;
+  setMovies: React.Dispatch<React.SetStateAction<Movie[]>>;
 }
 
 const initialState: SavedMoviesState = {
