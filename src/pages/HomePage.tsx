@@ -1,4 +1,3 @@
-import React from "react";
 import useMoviesList from "../hooks/useMoviesList";
 
 const HomePage = () => {

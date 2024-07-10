@@ -1,9 +1,9 @@
-import React from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
+
+import { devices } from "../../styles/settings/Breakpoints";
 import { colors } from "../../styles/settings/Colors";
 import { spacing } from "../../styles/settings/Spacing";
-import { devices } from "../../styles/settings/Breakpoints";
 
 type NavProps = {
   className: string;

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import styled from "styled-components";
 
 import logo from "../../assets/logo.svg";
@@ -25,7 +25,7 @@ const Wrapper = styled.header`
   justify-content: space-between;
   align-items: center;
   width: auto;
-  background-color: ${colors.background_base_opacity};
+  background-color: ${colors.background_base};
 
   img {
     height: 100%;

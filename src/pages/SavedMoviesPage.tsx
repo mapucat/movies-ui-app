@@ -1,5 +1,3 @@
-import React from "react";
-
 import SearchResult from "../components/search/SuccessResult";
 import { useSavedMovies } from "../context/SavedMoviesContext";
 import { ResultWrapper } from "./SearchPage";
