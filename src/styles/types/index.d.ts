@@ -46,6 +46,6 @@ interface Font {
 }
 
 interface Media {
-  sm: string; // for mobile screen
-  md: string; // for tablets
+  sm: number; // for mobile screen
+  md: number; // for tablets
 }

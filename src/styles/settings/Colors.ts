@@ -25,7 +25,7 @@ const ALIASES = {
   black: GREY_PALLETE[800] as string,
   // by component
   background_base: GREY_PALLETE[800] as string,
-  background_base_transparent: GREY_PALLETE[800] + 'DF',
+  background_base_transparent: GREY_PALLETE[800] + "DF",
   primary_text: GREY_PALLETE[500],
   secondary_text: GREY_PALLETE[50] as string,
 

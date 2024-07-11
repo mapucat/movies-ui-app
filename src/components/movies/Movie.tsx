@@ -1,11 +1,12 @@
 import { useMemo } from "react";
 import styled, { css } from "styled-components";
+
 import { useSavedMovies } from "../../context/SavedMoviesContext";
 import { isMovieSaved } from "../../helpers/Movies";
+import { devices } from "../../styles/settings/Breakpoints";
 import { spacing } from "../../styles/settings/Spacing";
 import Button from "../ui/Button";
 import Icon from "../ui/Icon";
-import { devices } from "../../styles/settings/Breakpoints";
 
 type MovieProps = {
   movie: Movie;
@@ -13,7 +14,6 @@ type MovieProps = {
 
 const baseElementStyles = css`
   border-radius: 8px;
-  
   width: 180px;
   height: 270px;
 `;
@@ -98,7 +98,7 @@ const DetailedInfo = styled.div`
     padding: ${spacing[100]};
 
     span {
-    -webkit-line-clamp: 6;
+      -webkit-line-clamp: 6;
     }
   }
 `;

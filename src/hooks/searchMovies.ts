@@ -1,8 +1,11 @@
-import { useState, useEffect } from "react";
-import axiosInstance from "../config/AxiosInstance";
 import { ApiResponse, ErrorResponse } from "../types/Response";
+import { useEffect, useState } from "react";
 
-export default function useSearchMovies(query: string) {
+import axiosInstance from "../config/AxiosInstance";
+
+export default function useSearchMovies(
+  query: string,
+): [Movie[], string, ErrorResponse | null] {
   const [moviesList, setMoviesList] = useState<Movie[]>([]);
   const [status, setStatus] = useState("unloaded");
   const [error, setError] = useState<ErrorResponse | null>(null);
