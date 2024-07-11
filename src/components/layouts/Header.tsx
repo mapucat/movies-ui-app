@@ -21,39 +21,46 @@ type HeaderProps = {
 const Wrapper = styled.header`
   padding: ${spacing[400]} 0;
 
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: auto;
   background-color: ${colors.background_base};
 
   img {
     height: 100%;
   }
 
-  img,
-  button {
+  div button {
+    display: block;
+    margin-left: auto;
+  }
+
+  & > img,
+  & > div {
     flex-grow: 1;
     max-width: 130px;
   }
 
-  & > button {
+  & > div button {
     visibility: hidden;
   }
 
   @media ${devices.sm} {
-    box-sizing: border-box;
-    position: fixed;
-    width: 90%;
     z-index: 10;
     padding: ${spacing[200]} 0;
 
-    img,
-    button {
+    & > img,
+    & > div {
       max-width: 100px;
     }
 
-    & > button {
+    & > div button {
       visibility: visible;
     }
   }
@@ -78,9 +85,11 @@ const Header = ({ nav: { links } }: HeaderProps) => {
         links={links}
         toogleManuOpened={toogleManuOpened}
       ></Nav>
-      <Button variant="icon" onClick={toogleManuOpened}>
-        <Icon name="menu"></Icon>
-      </Button>
+      <div>
+        <Button variant="icon" onClick={toogleManuOpened}>
+          <Icon name="menu"></Icon>
+        </Button>
+      </div>
     </Wrapper>
   );
 };

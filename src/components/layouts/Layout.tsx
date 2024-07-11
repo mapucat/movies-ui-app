@@ -15,13 +15,18 @@ const Wrapper = styled.div`
   background-color: ${colors.background_base};
   width: 100vw;
   min-height: 100vh;
-  padding: 0 ${spacing[800]};
+
+  &, header {
+    padding: ${spacing[300]} ${spacing[800]};
+  }
+
+  main {
+    padding-top: ${spacing[700]};
+  }
 
   @media ${devices.sm} {
-    padding: 0 ${spacing[500]};
-
-    main {
-      padding-top: ${spacing[900]};
+    &, header {
+      padding: ${spacing[200]} ${spacing[500]};
     }
   }
 `;
