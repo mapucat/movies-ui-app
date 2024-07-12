@@ -5,20 +5,31 @@ import Save from "./../../assets/save.svg?react";
 import Search from "./../../assets/search.svg?react";
 import Clear from "./../../assets/x.svg?react";
 
-type IconProps = {
-  name: "search" | "noData" | "clear" | "save" | "saveFilled" | "menu";
-};
+export const ICON_NAME_LIST = [
+  "search",
+  "noData",
+  "clear",
+  "save",
+  "saveFilled",
+  "menu",
+] as const;
 
-const Icon = (props: IconProps) => {
-  const { name } = props;
+export type IconName = (typeof ICON_NAME_LIST)[number];
 
-  const Icons: Record<IconProps["name"], any> = {
-    search: <Search />,
-    noData: <NoData />,
-    clear: <Clear />,
-    save: <Save />,
-    saveFilled: <SaveFilled />,
-    menu: <Menu />,
+interface IconProps {
+  name: IconName;
+}
+
+const Icon = ({ name }: IconProps) => {
+  const classes = `svg--${name}`;
+
+  const Icons: Record<IconName, any> = {
+    search: <Search className={classes} />,
+    noData: <NoData className={classes} />,
+    clear: <Clear className={classes} />,
+    save: <Save className={classes} />,
+    saveFilled: <SaveFilled className={classes} />,
+    menu: <Menu className={classes} />,
   };
 
   return Icons[name];

@@ -6,9 +6,9 @@ const config: Config = {
     "^.+\\.tsx?$": "ts-jest",
   },
   moduleNameMapper: {
-    // "\\.svg\\?react$": "jest-transformer-svg",
-    '\\.svg\\?react$': '<rootDir>/src/__mocks__/svg.mock.tsx',
+    "\\.svg\\?react$": "<rootDir>/__mocks__/svg.mock.tsx",
   },
+  setupFiles: ["<rootDir>/__mocks__/browserMocks.ts"],
   setupFilesAfterEnv: ["<rootDir>/jest.setup.ts"],
   verbose: true,
   coverageThreshold: {

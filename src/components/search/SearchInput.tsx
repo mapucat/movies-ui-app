@@ -83,9 +83,11 @@ const Wrapper = styled.div`
   }
 `;
 
+const DEBOUNCE_TIME = 250;
+
 const SearchInput = ({ onSearch }: SearchInputProps) => {
   const [value, setValue] = useState("");
-  const [debouncedSearch] = useDebounce(value, 250);
+  const [debouncedSearch] = useDebounce(value, DEBOUNCE_TIME);
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const targetValue = (event?.target as HTMLInputElement)?.value;
@@ -98,8 +100,8 @@ const SearchInput = ({ onSearch }: SearchInputProps) => {
 
   return (
     <Wrapper>
-      <input type="text" value={value} onChange={handleChange} />
-      <Button variant="icon" onClick={() => setValue("")}>
+      <input data-testid="search-input-element" type="text" value={value} onChange={handleChange} />
+      <Button data-testid="search-clear-button" variant="icon" onClick={() => setValue("")}>
         <Icon name="clear"></Icon>
       </Button>
     </Wrapper>
